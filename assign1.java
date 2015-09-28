@@ -15,7 +15,7 @@ public class assign1
 	public static long time;
 	
 	
-	public static void name (String type, int size, String alg, String ofile)
+	public static void name (String type, int size, String alg)
 	{
 		arr(size, type);											//create array
 		if (alg.equalsIgnoreCase("bubblesort"))
@@ -24,7 +24,7 @@ public class assign1
 			bubblesort();											//sort array
 			endTime = System.currentTimeMillis();
 			time = endTime - startTime;
-			output(ofile, time);						
+			output(time);						
 		}
 
 		else if (alg.equalsIgnoreCase("insertionsort"))
@@ -33,7 +33,7 @@ public class assign1
 			insertionsort();
 			endTime = System.currentTimeMillis();
 			time = endTime - startTime;
-			output(ofile, time);
+			output(time);
 		}
 
 		else if(alg.equalsIgnoreCase("mergesort"))
@@ -70,10 +70,12 @@ public class assign1
 				
 		}
 		else
+		{
 			for( int i=0; i< a.length; i++)
 			{
 				a[i] = generator.nextInt(11);					
-			}													
+			}
+		}			
 	}
 
 	public static void bubblesort()
@@ -164,25 +166,6 @@ public class assign1
 		}
 		System.out.println(time);
 		System.out.println(cnt);
-
-		/*try
-		{
-	 		BufferedWriter out = new BufferedWriter(new FileWriter("out.txt"));
-			for (int i=0; i<a.length; i++)
-			{
-	 			out.write("%d\n", a[i]);
-			}
-			out.write(("the time taken to sort was: %d", time));
-			out.close();
-		}
-		catch(Exception e)
-		{
-				if(!y.exists())
-			{
-				System.out.println("file does not exist");
-				return 0;
-			}
-		}*/
 	}
 	
 	public static void output (long time)
@@ -195,4 +178,5 @@ public class assign1
 		System.out.println(time);
 		System.out.println(cnt);
 	}
+	
 }

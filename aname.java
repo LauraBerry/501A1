@@ -5,7 +5,6 @@ public class aname
 	public static void main(String[] args)
 	{
 			assign1 driver = new assign1();
-		 	String ofile =args[3];
 			int size = Integer.parseInt(args[1]);
 			String alg = args[2];
 			String type = args[0];
@@ -24,7 +23,7 @@ public class aname
 			{
 				throw new NumberFormatException("Error- the size of the array must be bigger than zero");
 			}
-			driver.name(alg, size, type, ofile);
+			driver.name(alg, size, type);
 			
 			
 	}
