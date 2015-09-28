@@ -30,15 +30,7 @@ public class aname
 	}
 	public static boolean	inputalg(String x)
 	{
-		if (x.equalsIgnoreCase("asscending"))
-		{
-			bool = true;
-		}
-		else if (x.equalsIgnoreCase("decending"))
-		{
-			bool = true;
-		}
-		else if (x.equalsIgnoreCase("random"))
+		if (x.equalsIgnoreCase("asscending")||x.equalsIgnoreCase("decending")|x.equalsIgnoreCase("random"))
 		{
 			bool = true;
 		}
@@ -50,15 +42,7 @@ public class aname
 
 	public static boolean intype( String y)
 	{
-		if (y.equalsIgnoreCase("bubblesort"))
-		{
-			iean = true;
-		}
-		else if (y.equalsIgnoreCase("insertionsort"))
-		{
-			iean = true;
-		}
-		else if (y.equalsIgnoreCase("mergesort"))
+		if (y.equalsIgnoreCase("bubblesort")||y.equalsIgnoreCase("insertionsort")||y.equalsIgnoreCase("mergesort"))
 		{
 			iean = true;
 		}
