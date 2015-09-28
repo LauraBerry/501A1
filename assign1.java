@@ -6,9 +6,7 @@
 
 public class assign1
 {
-	public static int w = 0;
 	public static int cnt;
-	public static int temp;
 	public static Random generator = new Random();
 	public static int[] a;
 	public static int[] sorted;
@@ -22,7 +20,6 @@ public class assign1
 		arr(size, type);											//create array
 		if (alg.equalsIgnoreCase("bubblesort"))
 		{
-			System.out.println("here");
 			startTime = System.currentTimeMillis();
 			bubblesort();											//sort array
 			endTime = System.currentTimeMillis();
