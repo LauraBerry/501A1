@@ -15,7 +15,31 @@ public class AllTests
 		assertEquals(true, aname.inputalg ("mergesort"));
 	}
 	
+	@Test
+	public void testFindSort()
+	{
+		assertEqualls([1,2,3], Sorter.findSort([3,2,1],"bubblesort",2));
+		assertEqualls([1,2,3], Sorter.findSort([3,2,1],"insertionsort",2));
+		assertEqualls([1,2,3], Sorter.findSort([3,2,1],"mergesort",2));
+	}
 	
+
+	@Test
+	public void testSortingAlgs()
+	{
+		assertEquals([1,2,3], Sorter.bubblesort([3,2,1]));
+		assertEquals([1,2,3], Sorter.insertionsort([3,2,1]));
+		assertEquals([1,2,3], Sorter.mergesort(0,1,[3,2,1]));
+	}
+
+	@Test
+	public void testArrayBuilder()
+	{
+		assertEquals([1,2,3], assign1.arr(2,"asscending", []));
+		assertEquals([3,2,1], assign1.arr(2,"decending", []));
+	}
+
+
 
 	
 }
