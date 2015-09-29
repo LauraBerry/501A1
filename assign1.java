@@ -6,51 +6,42 @@
 
 public class assign1
 {
-	public static int cnt;
-	public static Random generator = new Random();
-	public static int[] a;
-	public static int[] sorted;
-	public static long startTime;
-	public static long endTime;
-	public static long time;
+	public int cnt=0;
+	public Random generator = new Random();
+	public int[] sorted;
+	public long startTime;
+	public long endTime;
+	public  long time;
 	
 	
-	public static void name (String type, int size, String alg)
+	public void name (String type, int size, String alg)
 	{
-		arr(size, type);											//create array
+		int[] finalArr= new int[size];
+		int[] array= new int[size];
+		array = arr(size, type, array);
+		startTime = System.currentTimeMillis();											//create array
 		if (alg.equalsIgnoreCase("bubblesort"))
 		{
-			startTime = System.currentTimeMillis();
-			bubblesort();											//sort array
-			endTime = System.currentTimeMillis();
-			time = endTime - startTime;
-			output(time);						
+			finalArr=bubblesort(array);															
 		}
 
 		else if (alg.equalsIgnoreCase("insertionsort"))
 		{
-			startTime = System.currentTimeMillis();
-			insertionsort();
-			endTime = System.currentTimeMillis();
-			time = endTime - startTime;
-			output(time);
+			finalArr=insertionsort(array);
 		}
 
 		else if(alg.equalsIgnoreCase("mergesort"))
 		{
-			startTime = System.currentTimeMillis();
-			cnt=0;
-			mergesort(0, a.length-1);
-			endTime = System.currentTimeMillis();
-			time = endTime - startTime;
-			output(time);
+			finalArr=mergesort(0, size-1, array);
 		}
+		endTime = System.currentTimeMillis();
+		time = endTime - startTime;
+		output(time, finalArr);
 		
 	}
 	
-	public static void arr(int x, String s)
+	public int[] arr(int x, String s, int[] a)
 	{
-		a= new int[x];								//make a new array of the size indicated
 		if( s.equalsIgnoreCase("asscending"))
 		{
 			for (int i=0; i < a.length; i++)
@@ -75,11 +66,12 @@ public class assign1
 			{
 				a[i] = generator.nextInt(11);					
 			}
-		}			
+		}
+		return a;			
 	}
 
-	public static void bubblesort()
-	{	cnt=0;
+	public int[] bubblesort(int[] a)
+	{
 		for(int i= 0; i < a.length-1; i++)
 		{
 			for (int j = a.length-1;j>i; j--)
@@ -93,12 +85,12 @@ public class assign1
 				}
 			}		
 		}
+		return a;
 	} 
 
 
-	public static void insertionsort()
+	public int[] insertionsort(int[] a)
 	{
-		cnt = 0;
 		for (int i =1, j; i< a.length; i++)
 		{
 			int tmp = a[i];
@@ -109,11 +101,11 @@ public class assign1
 			}
 			a[j] = tmp;
 		}
+		return a;
 	}
 
-	public static void mergesort( int begin, int end)
+	public int[] mergesort( int begin, int end, int[] a)
 	{
-		
 		int n = end-begin +1;
 		if (n>1)
 		{
@@ -122,13 +114,14 @@ public class assign1
 			int begin2 = end1+1;
 			int end2 = end;
 			cnt++;
-			mergesort(begin1, end1);
-			mergesort(begin2, end2);
-			merge(begin1, end1, begin2, end2);
+			mergesort(begin1, end1, a);
+			mergesort(begin2, end2, a);
+			a = merge(begin1, end1, begin2, end2, a);
 		}
+		return a;
 	}
 		
-	public static void merge( int begin1, int end1, int begin2, int end2)
+	public int [] merge( int begin1, int end1, int begin2, int end2, int[] a)
 	{
 		int n1= end1-begin1 +1;
 		int n2= end2-begin2+1;
@@ -155,10 +148,10 @@ public class assign1
 			tmp[i++]=a[i2];
 		for(i=0;i<n1+n2;i++)
 			a[begin1+i]=tmp[i];
-		
+		return tmp;
 	}
 	
-	public static void output (long time)
+	public void output (long time, int[] a)
 	{
 		System.out.print("sorted list: ");
 		for (int i = 0; i < a.length; i++)
