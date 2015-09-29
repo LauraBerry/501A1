@@ -15,4 +15,10 @@ public class AllTests
 		assertEquals(true, aname.inputalg ("mergesort"));
 	}
 	
+	@Test 
+	public void testNewOutput()
+	{
+		assertEquals("0\n\n0\n0", assign1.name("bubblesort", 1, "asscending"));
+	}
+	
 }
