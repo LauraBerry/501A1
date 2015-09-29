@@ -158,16 +158,6 @@ public class assign1
 		
 	}
 	
-	public static void output(String y, long time)
-	{
-		for (int i = 0; i < a.length; i++)
-		{
-			System.out.println(a[i]);
-		}
-		System.out.println(time);
-		System.out.println(cnt);
-	}
-	
 	public static void output (long time)
 	{
 		for (int i = 0; i < a.length; i++)
