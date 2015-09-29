@@ -19,9 +19,13 @@ public class aname
 	}
 	public static boolean	inputalg(String x, String y)
 	{
-		if ((x.equalsIgnoreCase("asscending")||x.equalsIgnoreCase("decending")|x.equalsIgnoreCase("random"))&&(y.equalsIgnoreCase("bubblesort")||y.equalsIgnoreCase("insertionsort")||y.equalsIgnoreCase("mergesort")))
+		if ((x.equalsIgnoreCase("ascending")||x.equalsIgnoreCase("decending")|x.equalsIgnoreCase("random"))&&(y.equalsIgnoreCase("bubblesort")||y.equalsIgnoreCase("insertionsort")||y.equalsIgnoreCase("mergesort")))
 		{
 			inputCorrect = true;
+		}
+		else
+		{
+			inputCorrect = false;
 		}
 		return inputCorrect;
 	}

@@ -31,7 +31,7 @@ public class assign1
 	
 	public int[] arr(int x, String s, int[] a)
 	{
-		if( s.equalsIgnoreCase("asscending"))
+		if( s.equalsIgnoreCase("ascending"))
 		{
 			for (int i=0; i < a.length; i++)
 			{
