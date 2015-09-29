@@ -7,7 +7,6 @@
 public class assign1
 {
 	public Random generator = new Random();
-	public int[] sorted;
 	public long startTime;
 	public long endTime;
 	public  long time;
@@ -26,7 +25,6 @@ public class assign1
 
 		time = endTime - startTime;
 		output(time, finalArr);
-		
 	}
 	
 	public int[] arr(int x, String s, int[] a)
@@ -43,7 +41,6 @@ public class assign1
 			int j = x;
 			for (int k = 0; k < a.length; k++)
 			{
-
 					a[k] = j;
 					j--;
 			}
